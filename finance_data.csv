@@ -1,0 +1,16 @@
+date,amount,category,description
+01-01-2025,2000.00,Income,Freelance Payment
+02-01-2025,500.00,Expense,Groceries
+03-01-2025,150.00,Expense,Internet Bill
+05-01-2025,300.00,Expense,Electricity Bill
+07-01-2025,2500.00,Income,Salary
+08-01-2025,450.00,Expense,Restaurant
+10-01-2025,100.00,Expense,Transport
+12-01-2025,75.00,Expense,Movie
+15-01-2025,3200.00,Income,Project Bonus
+18-01-2025,600.00,Expense,Shopping
+20-01-2025,125.65,Income,Salary
+22-01-2025,200.00,Expense,Medicine
+25-01-2025,800.00,Expense,House Rent
+27-01-2025,90.00,Expense,Mobile Recharge
+30-01-2025,2700.00,Income,Stock Dividend
