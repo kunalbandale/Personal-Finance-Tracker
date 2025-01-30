@@ -27,20 +27,20 @@ class CSV:
         with open(cls.CSV_FILE, "a", newline="") as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=cls.COLUMNS)
             writer.writerow(new_entry)
-        print("Entry Added Successfully")  # ✅ Fixed placement
+        print("Entry Added Successfully")  
 
     @classmethod
     def get_tnx(cls, start_date, end_date):
         df = pd.read_csv(cls.CSV_FILE)
 
-        # ✅ Convert date column to datetime
+    
         df["date"] = pd.to_datetime(df["date"], format="%d-%m-%Y")
-        df["amount"] = pd.to_numeric(df["amount"], errors="coerce")  # ✅ Convert amount to numeric
+        df["amount"] = pd.to_numeric(df["amount"], errors="coerce")  
 
         start_date = datetime.strptime(start_date, "%d-%m-%Y")
         end_date = datetime.strptime(end_date, "%d-%m-%Y")
 
-        # ✅ Fix mask condition
+
         mask = (df["date"] >= start_date) & (df["date"] <= end_date)
         filtered_df = df.loc[mask]
 
@@ -50,7 +50,7 @@ class CSV:
             print(f"Transactions from {start_date.strftime('%d-%m-%Y')} to {end_date.strftime('%d-%m-%Y')}:")
             print(filtered_df.to_string(index=False, formatters={"date": lambda x: x.strftime('%d-%m-%Y')}))
 
-            # ✅ Fix Income and Expense Calculation
+            
             total_income = filtered_df[filtered_df["category"] == "Income"]["amount"].sum()
             total_expense = filtered_df[filtered_df["category"] == "Expense"]["amount"].sum()
 
